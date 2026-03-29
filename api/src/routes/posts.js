@@ -1,14 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const controller = require("../controllers/authController");
-const { requireAuth } = require('../middleware/auth.js');
+const controller = require("../controllers/postsController");
+const requireAuth = require('../middleware/auth');
 
 router.get('/', controller.getAllPosts)
 router.get('/:id', controller.getPost)
 
-router.use(requireAuth);
 router.post('/', controller.createPost);
-router.put('/:id', checkPostOwnership, controller.updatePost);
-router.delete('/:id', checkPostOwnership, controller.deletePost);
-router.patch('/:id/publish', checkPostOwnership, controller.togglePublishStatus);
+router.put('/:id', requireAuth, controller.updatePost);
+router.delete('/:id', requireAuth, controller.deletePost);
+router.patch('/:id/publish', requireAuth, controller.togglePublishStatus);
 module.exports = router;
