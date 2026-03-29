@@ -5,6 +5,9 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+const authRouter = require('./routes/auth')
+const commentsRouter = require('./routes/comments')
+const postsRouter = require('./routes/posts')
 
 app.get("/", (req, res) => {
   res.json({ message: "Blog API is running" });
