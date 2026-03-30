@@ -1,6 +1,5 @@
 const prisma = require("../lib/prisma");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
+
 
 module.exports = {
     getAllPosts: async(req, res, next) => {
