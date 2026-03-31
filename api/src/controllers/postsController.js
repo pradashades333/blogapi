@@ -51,5 +51,16 @@ module.exports = {
         }catch (err){
             next(err)
         }
+    },
+
+    togglePublishStatus:async(req, res, next) => {
+        try {
+            const post = await prisma.post.findUnique({ where: { id: parseInt(req.params.id) } })
+            const updatedStatus = !post.published
+            const newStatus = await prisma.post.update({where: { id: parseInt(req.params.id) }, data: { published: updatedStatus } })
+            res.json(newStatus)
+        } catch(err) {
+            next(err)
+        }
     }
 }
