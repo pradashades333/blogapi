@@ -22,4 +22,14 @@ module.exports = {
 
     },
 
+    createPost:async(req, res, next) => {
+        try {
+            const {title, content} = req.body
+            const {id} = req.user
+            const postCreate = await prisma.post.create({data:{title, content, authorId:id}})
+            res.json(postCreate)
+        } catch(err) {
+            next(err)
+        }
+    }
 }
