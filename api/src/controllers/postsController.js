@@ -10,5 +10,16 @@ module.exports = {
         } catch (err) {
             next (err)
         }
-    }
+    },
+
+    getPost: async(req, res, next) => {
+        try {
+            const showPost = await prisma.post.findUnique({ where: { id: parseInt(req.params.id) } })
+            res.json(showPost)
+        } catch(err) {
+            next(err)
+        }
+
+    },
+
 }
