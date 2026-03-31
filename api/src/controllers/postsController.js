@@ -31,5 +31,17 @@ module.exports = {
         } catch(err) {
             next(err)
         }
-    }
+    },
+
+    updatePost:async(req, res, next) => {
+        try{
+            const {title, content} = req.body
+            const {id} = req.user
+            const postUpdate = await prisma.post.update({ where: { id: parseInt(req.params.id)},data:{title, content, authorId:id} })
+            res.json(postUpdate)
+        } catch(err){
+            next(err)
+        }
+    },
+    
 }
