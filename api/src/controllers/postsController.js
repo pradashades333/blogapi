@@ -43,5 +43,13 @@ module.exports = {
             next(err)
         }
     },
-    
+
+    deletePost:async(req, res, next) => {
+        try {
+            const postDelete = await prisma.post.delete({where: {id: parseInt(req.params.id)}})
+            res.json(postDelete)
+        }catch (err){
+            next(err)
+        }
+    }
 }
