@@ -13,4 +13,14 @@ module.exports = {
         }
     },
 
+    updateComment: async (req, res, next) => {
+        try{
+            const {content} = req.body
+            const commentUpdate = await prisma.comment.update({ where: { id: parseInt(req.params.id) }, data: { content } })
+            res.json(commentUpdate)
+        } catch (err) {
+            next(err)
+        }
+    },
+
 }
