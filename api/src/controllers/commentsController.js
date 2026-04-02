@@ -23,4 +23,13 @@ module.exports = {
         }
     },
 
+    deleteComment: async (req, res, next) => {
+        try {
+            const commentDelete = await prisma.comment.delete({where: {id: parseInt(req.params.id)}})
+            res.json(commentDelete)
+        } catch (err){
+            next(err)
+        }
+    }
+
 }
