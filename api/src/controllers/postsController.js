@@ -24,8 +24,8 @@ module.exports = {
     createPost:async(req, res, next) => {
         try {
             const {title, content} = req.body
-            const {id} = req.user
-            const postCreate = await prisma.post.create({data:{title, content, authorId:id}})
+            const {userId} = req.user
+            const postCreate = await prisma.post.create({data:{title, content, authorId:userId}})
             res.json(postCreate)
         } catch(err) {
             next(err)
@@ -35,8 +35,8 @@ module.exports = {
     updatePost:async(req, res, next) => {
         try{
             const {title, content} = req.body
-            const {id} = req.user
-            const postUpdate = await prisma.post.update({ where: { id: parseInt(req.params.id)},data:{title, content, authorId:id} })
+            const {userId} = req.user
+            const postUpdate = await prisma.post.update({ where: { id: parseInt(req.params.id)},data:{title, content, authorId:userId} })
             res.json(postUpdate)
         } catch(err){
             next(err)

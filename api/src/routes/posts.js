@@ -6,7 +6,7 @@ const requireAuth = require('../middleware/auth');
 router.get('/', controller.getAllPosts)
 router.get('/:id', controller.getPost)
 
-router.post('/', controller.createPost);
+router.post('/',requireAuth, controller.createPost);
 router.put('/:id', requireAuth, controller.updatePost);
 router.delete('/:id', requireAuth, controller.deletePost);
 router.patch('/:id/publish', requireAuth, controller.togglePublishStatus);
