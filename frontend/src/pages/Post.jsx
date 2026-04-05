@@ -12,13 +12,15 @@ function Post() {
         .then((data) => setPost(data));
     }, [id]);
 
-    if (!post) return <p>Loading...</p>
+    if (!post) return <p style={{ backgroundColor: 'lightblue', padding: '20px' }}>Loading...</p>
 
     return (
-        <div className="single-post">
-        <h1>{post.title}</h1>
-        <p>{post.content}</p>
-    </div>
+        <div style={{ backgroundColor: 'lightblue', padding: '20px' }}>
+            <div style={{ backgroundColor: 'white', border: '2px solid navy', padding: '20px' }}>
+                <h1 style={{ color: 'purple', marginTop: 0 }}>{post.title}</h1>
+                <p style={{ color: 'gray', fontSize: '16px' }}>{post.content}</p>
+            </div>
+        </div>
     )
 }
 
