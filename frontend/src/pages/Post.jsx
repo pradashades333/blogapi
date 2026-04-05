@@ -13,14 +13,13 @@ function Post() {
     }, [id]);
 
     if (!post) return <p>Loading...</p>
-    
+
     return (
         <div className="single-post">
         <h1>{post.title}</h1>
         <p>{post.content}</p>
     </div>
     )
-
 }
 
 export default Post;
