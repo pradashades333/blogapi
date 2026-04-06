@@ -24,6 +24,9 @@ function Post() {
             body: JSON.stringify({ content: commentText })
         });
         setCommentText('');
+        fetch(`http://localhost:3000/posts/${id}`)
+            .then(res => res.json())
+            .then(data => setPost(data));
     }
 
     if (!post) return <p style={{ backgroundColor: 'lightblue', padding: '20px' }}>Loading...</p>
