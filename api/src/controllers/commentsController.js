@@ -4,9 +4,8 @@ module.exports = {
     createComment: async (req, res, next) => {
         try {
             const {content} = req.body
-            const {userId} = req.user
-            const {postId} = req.params
-            const commentCreate = await prisma.comment.create({data:{content, authorId:userId, postId: parseInt(postId)}})
+            const { userId } = req.user
+            const commentCreate = await prisma.comment.create({data:{content, authorId: userId, postId: parseInt(req.params.id)}})
             res.json(commentCreate)
         } catch(err) {
             next(err)
