@@ -14,6 +14,18 @@ function Post() {
         .then((data) => setPost(data));
     }, [id]);
 
+    async function handleComment() {
+        await fetch(`http://localhost:3000/posts/${id}/comments`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({ content: commentText })
+        });
+        setCommentText('');
+    }
+
     if (!post) return <p style={{ backgroundColor: 'lightblue', padding: '20px' }}>Loading...</p>
 
     return (
@@ -40,7 +52,7 @@ function Post() {
                         style={{ width: '100%', padding: '10px', boxSizing: 'border-box' }}
                         placeholder="Write a comment..."
                     />
-                    <button style={{ marginTop: '8px', padding: '8px 16px' }}>
+                    <button onClick={handleComment} style={{ marginTop: '8px', padding: '8px 16px' }}>
                         Submit
                     </button>
                 </div>
