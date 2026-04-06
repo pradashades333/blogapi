@@ -15,7 +15,7 @@ function App() {
       <Navbar user={user} setUser={setUser} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/post/:id" element={<Post />} />
+        <Route path="/posts/:id" element={<Post />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route path="/register" element={<Register setUser={setUser} />} />
       </Routes>
