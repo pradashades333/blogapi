@@ -13,7 +13,7 @@ module.exports = {
 
     getPost: async(req, res, next) => {
         try {
-            const showPost = await prisma.post.findUnique({ where: { id: parseInt(req.params.id) } })
+            const showPost = await prisma.post.findUnique({ where: { id: parseInt(req.params.id) }, include: { comments: true } })
             res.json(showPost)
         } catch(err) {
             next(err)
