@@ -2,6 +2,15 @@ const prisma = require("../lib/prisma");
 
 
 module.exports = {
+    getAllPostsAuthor: async (req, res, next) => {
+        try {
+            const posts = await prisma.post.findMany();
+            res.json(posts);
+        } catch (err) {
+            next(err);
+        }
+    },
+
     getAllPosts: async(req, res, next) => {
         try {
             const showAll = await prisma.post.findMany({where: {published:true}})
