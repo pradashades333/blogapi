@@ -13,7 +13,7 @@ export default function Dashboard() {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
-      .then(setPosts)
+      .then((data) => setPosts(Array.isArray(data) ? data : []))
   }, [])
 
   async function togglePublish(id) {
