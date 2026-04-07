@@ -16,6 +16,10 @@ function Login() {
     })
       .then(res => res.json())
       .then(data => {
+        if (!data.token) {
+          alert(data.error || 'Login failed')
+          return
+        }
         localStorage.setItem('token', data.token)
         navigate('/dashboard')
       })
