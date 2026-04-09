@@ -41,25 +41,29 @@ export default function Dashboard() {
         <Link to="/posts/new" className="btn-new">+ New Post</Link>
       </div>
 
-      <ul className="post-list">
-        {posts.map((post) => (
-          <li key={post.id} className="post-item">
-            <div>
-              <span className="post-title">{post.title}</span>
-              <span className={`post-status ${post.published ? '' : 'unpublished'}`}>
-                {post.published ? 'Published' : 'Unpublished'}
-              </span>
-            </div>
-            <div className="post-actions">
-              <button onClick={() => togglePublish(post.id)}>
-                {post.published ? 'Unpublish' : 'Publish'}
-              </button>
-              <button onClick={() => navigate(`/posts/${post.id}/edit`)}>Edit</button>
-              <button className="delete" onClick={() => deletePost(post.id)}>Delete</button>
-            </div>
-          </li>
-        ))}
-      </ul>
+      {posts.length === 0 ? (
+        <p className="no-posts">No posts yet. Create your first one!</p>
+      ) : (
+        <ul className="post-list">
+          {posts.map((post) => (
+            <li key={post.id} className="post-item">
+              <div>
+                <span className="post-title">{post.title}</span>
+                <span className={`post-status ${post.published ? '' : 'unpublished'}`}>
+                  {post.published ? 'Published' : 'Unpublished'}
+                </span>
+              </div>
+              <div className="post-actions">
+                <button onClick={() => togglePublish(post.id)}>
+                  {post.published ? 'Unpublish' : 'Publish'}
+                </button>
+                <button onClick={() => navigate(`/posts/${post.id}/edit`)}>Edit</button>
+                <button className="delete" onClick={() => deletePost(post.id)}>Delete</button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   )
 }

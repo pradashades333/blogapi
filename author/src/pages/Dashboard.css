@@ -45,6 +45,18 @@
   padding: 16px 20px;
   border: 1px solid var(--border);
   border-radius: 10px;
+  transition: box-shadow 0.2s;
+}
+
+.post-item:hover {
+  box-shadow: var(--shadow);
+}
+
+.no-posts {
+  color: var(--text);
+  font-size: 15px;
+  padding: 40px 0;
+  text-align: center;
 }
 
 .post-title {
