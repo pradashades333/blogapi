@@ -1,0 +1,62 @@
+.new-post {
+  padding: 40px;
+  max-width: 720px;
+}
+
+.new-post h1 {
+  font-size: 32px;
+  margin: 0 0 32px;
+}
+
+.new-post form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.new-post label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.new-post input,
+.new-post textarea {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  background: var(--bg);
+  color: var(--text-h);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.new-post input:focus,
+.new-post textarea:focus {
+  border-color: var(--accent);
+}
+
+.new-post textarea {
+  min-height: 260px;
+  resize: vertical;
+}
+
+.new-post button {
+  align-self: flex-start;
+  padding: 10px 24px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.new-post button:hover {
+  opacity: 0.85;
+}
