@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import './EditPost.css'
 
 function EditPost() {
   const { id } = useParams()
@@ -42,26 +43,30 @@ function EditPost() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Title:
-        <input
-          type="text"
-          value={title}
-          onChange={e => setTitle(e.target.value)}
-        />
-      </label>
-
-      <label>
-        Content:
-        <textarea
-          value={content}
-          onChange={e => setContent(e.target.value)}
-        />
-      </label>
-
-      <button type="submit">Save Changes</button>
-    </form>
+    <div className="edit-post">
+      <h1>Edit Post</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Title
+          <input
+            type="text"
+            value={title}
+            onChange={e => setTitle(e.target.value)}
+          />
+        </label>
+        <label>
+          Content
+          <textarea
+            value={content}
+            onChange={e => setContent(e.target.value)}
+          />
+        </label>
+        <div className="edit-post-actions">
+          <button type="submit" className="btn-save">Save Changes</button>
+          <button type="button" className="btn-cancel" onClick={() => navigate('/dashboard')}>Cancel</button>
+        </div>
+      </form>
+    </div>
   )
 }
 

@@ -1,0 +1,81 @@
+.edit-post {
+  padding: 40px;
+  max-width: 720px;
+}
+
+.edit-post h1 {
+  font-size: 32px;
+  margin: 0 0 32px;
+}
+
+.edit-post form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.edit-post label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.edit-post input,
+.edit-post textarea {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  background: var(--bg);
+  color: var(--text-h);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.edit-post input:focus,
+.edit-post textarea:focus {
+  border-color: var(--accent);
+}
+
+.edit-post textarea {
+  min-height: 260px;
+  resize: vertical;
+}
+
+.edit-post-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-post-actions button {
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.edit-post-actions .btn-save {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+}
+
+.edit-post-actions .btn-save:hover {
+  opacity: 0.85;
+}
+
+.edit-post-actions .btn-cancel {
+  background: transparent;
+  color: var(--text-h);
+  border: 1px solid var(--border);
+}
+
+.edit-post-actions .btn-cancel:hover {
+  background: var(--accent-bg);
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
