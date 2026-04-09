@@ -29,10 +29,7 @@ function NewPost() {
     <form onSubmit={handleSubmit}>
       <label>
         Title:
-        <input
-          type="text"
-          value={title}
-          onChange={e => setTitle(e.target.value)}
+        <input type="text" value={title} onChange={e => setTitle(e.target.value)}
         />
       </label>
 
