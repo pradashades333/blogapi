@@ -1,1 +1,2 @@
 - [2026-06-04 12:39:09+02:00] reviewed route notes.
+- [2026-06-07 14:14:14+02:00] tracked response example cleanup.
