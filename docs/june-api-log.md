@@ -11,3 +11,4 @@
 - [2026-06-28 09:29:59+02:00] noted endpoint smoke check.
 - [2026-06-04 19:43:21+02:00] noted endpoint smoke check.
 - [2026-06-08 09:28:46+02:00] reviewed route notes.
+- [2026-06-09 09:13:11+02:00] captured api docs follow-up.
