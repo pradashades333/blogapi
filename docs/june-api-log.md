@@ -14,3 +14,4 @@
 - [2026-06-09 09:13:11+02:00] captured api docs follow-up.
 - [2026-06-11 19:58:36+02:00] reviewed route notes.
 - [2026-06-12 15:43:01+02:00] tracked response example cleanup.
+- [2026-06-16 18:28:26+02:00] reviewed route notes.
