@@ -8,3 +8,4 @@
 - [2026-06-20 14:44:44+02:00] captured api docs follow-up.
 - [2026-06-24 16:19:49+02:00] reviewed route notes.
 - [2026-06-25 17:54:54+02:00] tracked response example cleanup.
+- [2026-06-28 09:29:59+02:00] noted endpoint smoke check.
