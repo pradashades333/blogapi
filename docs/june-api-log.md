@@ -22,3 +22,4 @@
 - [2026-06-26 10:13:31+02:00] reviewed route notes.
 - [2026-06-27 10:58:56+02:00] captured api docs follow-up.
 - [2026-06-29 13:43:21+02:00] noted endpoint smoke check.
+- [2026-06-30 11:28:46+02:00] checked handler cleanup pass.
